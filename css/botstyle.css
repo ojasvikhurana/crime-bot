@@ -1,0 +1,29 @@
+body{
+    background-color:#464747;
+}
+
+iframe{
+    border: 1px solid gray;
+    padding-top: 6px;
+    margin-top: 20px;
+}
+#chatbot{
+    display: flex;
+    flex-direction: rows;
+    flex-wrap: wraps;
+    justify-content: space-around;
+
+}
+
+.chat{
+    
+}
+
+#cbpara{
+    background-color: white;
+    display: inline-block;
+    border: 1px solid gray;
+    padding: 10px;
+    align-self: center;
+    width:480px;
+}
