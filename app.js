@@ -2,12 +2,25 @@ var express = require("express");
 var app = express();
 var bodyParser= require("body-parser");
 var mongoose = require("mongoose");
-// var methodOverride = require("method-override");
+var methodOverride = require("method-override");
+var Fir = require("./models/fir");
+var PoliceOrg = require("./models/policeorg")
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
+mongoose.connect("mongodb://localhost:27017/crimebot");
 
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
-// app.use(methodOverride("_method"));
+app.use(methodOverride("_method"));
+
+// ================================
+// 	ROUTES
+// ================================
 
 app.get("/", function(req, res) {
 	res.render("index");
