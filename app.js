@@ -41,6 +41,6 @@ app.get("/missing", function(req, res) {
 	res.render("missing");
 });
 
-app.listen(3000 || process.env.PORT, function() {
+app.listen(process.env.PORT || 3000, function() {
 	console.log("CrimeBot is Listening!");
 });
