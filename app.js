@@ -41,6 +41,14 @@ app.get("/missing", function(req, res) {
 	res.render("missing");
 });
 
+app.get("/:pid", function(req, res) {
+	res.render("pindex");
+});
+
+app.get("/:pid/missing", function(req, res) {
+	res.render("pmissing");
+});
+
 app.listen(3000 || process.env.PORT, function() {
 	console.log("CrimeBot is Listening!");
 });
