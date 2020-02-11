@@ -11,7 +11,15 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect("mongodb://localhost:27017/crimebot");
+// mongoose.connect("mongodb://localhost:27017/crimebot");
+mongoose.connect("mongodb+srv://Lisa:hello@cluster0-ulpnb.mongodb.net/test?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useCreateIndex: true
+}).then(() => {
+	console.log("Connected to DB!");
+}).catch(err => {
+	console.log("Error: ", err.message);
+});
 
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
@@ -52,6 +60,18 @@ app.get("/login", function(req, res) {
 
 app.get("/missing", function(req, res) {
 	res.render("missing");
+});
+
+app.get("/:id/fir", function(req, res) {
+	res.render("userloggedin");
+});
+
+app.get("/:pid/complaints", function(req, res) {
+	res.render("pindex");
+});
+
+app.get("/:pid/missing", function(req, res) {
+	res.render("pmissing");
 });
 
 app.listen(process.env.PORT || 3000, function() {

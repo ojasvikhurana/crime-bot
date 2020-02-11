@@ -11,4 +11,4 @@ var policeSchema = new mongoose.Schema({
 	]
 });
 
-module.exports = mongoose.model("PoliceOrg", policeSchema);
+module.exports = mongoose.model("PoliceOrg_crimebot", policeSchema);

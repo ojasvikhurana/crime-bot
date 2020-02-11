@@ -13,4 +13,4 @@ var firSchema = new mongoose.Schema({
 	aadhar: String
 });
 
-module.exports = mongoose.model("Fir", firSchema);
+module.exports = mongoose.model("Fir_crimebot", firSchema);
